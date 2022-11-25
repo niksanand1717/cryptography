@@ -1,13 +1,13 @@
 class CaesarCipher():
     def __init__(self, rot):
-        self.k = rot
+        self.k = rot # Specifying Rotaion
         self.plain_message = ""
         self.encrypted_message = ""
         self.decrypted_message = ""
-        self.alpha = "abcdefghijklmnopqrstuvwxyz"
-        self.rotated = self.alpha[rot:]+self.alpha[:rot]
+        self.alpha = "abcdefghijklmnopqrstuvwxyz" # Base alphabets
+        self.rotated = self.alpha[rot:]+self.alpha[:rot] # Rotated left values
 
-    def encrypt(self, plain_message):
+    def encrypt(self, plain_message): # Function to encrypt plain message to cipher text
         self.plain_message = plain_message
         for _ in plain_message:
             self.encrypted_message += self.alpha[self.rotated.find(_)]
@@ -16,7 +16,7 @@ class CaesarCipher():
         else:
             print("\n[" + u'\u2716' + "] Problem in Encryption\nTry to select rotation\nbetween 1-25")
 
-    def decrypt(self, ciphertext):
+    def decrypt(self, ciphertext): # Function to decrypt cipher text to plain message
         for _ in ciphertext:
             self.decrypted_message += self.rotated[self.alpha.find(_)]
         if self.decrypted_message == self.plain_message:
