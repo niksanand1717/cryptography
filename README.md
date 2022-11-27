@@ -3,6 +3,7 @@
 
 > day zero
 >> Caesar Cipher / ROT-13
+>> Mono Alphabetic Cipher
 
 
 
